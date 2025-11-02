@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+
+      Jwt__Key: dev-secret-key-change-me-0123456789ABCD-012345
+      Jwt__Issuer: fortytwo
+      Jwt__Audience: fortytwo-clients
+    ports:
+      - "8080:8080"
